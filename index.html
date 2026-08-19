@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Animal Match Video Generator</title>
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Animal Match Video Maker</title>
 
 <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -12,6 +17,7 @@
 >
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -27,9 +33,11 @@ body {
     min-height: 70px;
     background: #fff;
     border-bottom: 1px solid #e5e7eb;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 15px 30px;
 }
 
@@ -72,7 +80,9 @@ body {
     background: #111827;
     border-radius: 15px;
     padding: 20px;
+
     overflow: auto;
+
     display: flex;
     justify-content: center;
 }
@@ -80,6 +90,7 @@ body {
 #previewCanvas {
     width: 540px;
     height: 960px;
+
     display: block;
     flex-shrink: 0;
 }
@@ -91,7 +102,9 @@ body {
 .progress-track {
     width: 100%;
     height: 8px;
+
     background: #e5e7eb;
+
     border-radius: 20px;
     overflow: hidden;
 }
@@ -99,62 +112,86 @@ body {
 .progress-bar {
     height: 100%;
     width: 0%;
+
     background: #6366f1;
 }
 
 .time-row {
     display: flex;
     justify-content: space-between;
+
     margin-top: 8px;
+
     color: #64748b;
     font-size: 12px;
 }
 
 .video-result {
     display: none;
+
     margin-top: 25px;
     padding: 20px;
+
     background: #f8fafc;
+
     border-radius: 14px;
 }
 
 .video-result video {
     width: 100%;
     max-height: 600px;
+
     background: #000;
+
     display: block;
 }
 
 .info {
     margin-top: 20px;
+
     padding: 15px;
+
     background: #f8fafc;
+
     border-radius: 12px;
+
     font-size: 13px;
     line-height: 1.7;
 }
 
 .safe-area-info {
     background: #fff7ed;
+
     border: 1px solid #fed7aa;
+
     color: #9a3412;
+
     padding: 12px;
+
     border-radius: 10px;
+
     font-size: 13px;
+
     margin-bottom: 20px;
 }
 
 .audio-box {
     background: #f8fafc;
+
     border: 1px solid #e5e7eb;
+
     padding: 12px;
+
     border-radius: 10px;
+
     margin-bottom: 10px;
 }
 
 .audio-status {
     font-size: 12px;
+
     margin-top: 5px;
+
     color: #64748b;
 }
 
@@ -181,11 +218,15 @@ body {
         width: 360px;
         height: 640px;
     }
+
 }
+
 </style>
+
 </head>
 
 <body>
+
 
 <header class="header">
 
@@ -214,6 +255,33 @@ body {
 <div class="panel">
 
 <h2>Video Settings</h2>
+
+
+<div class="safe-area-info">
+
+<strong>📱 Shorts Safe Area</strong>
+
+<br><br>
+
+Top spacing:
+<strong>50px</strong>
+
+<br>
+
+Bottom safe area:
+<strong>150px</strong>
+
+<br>
+
+Animal size:
+<strong>375 × 375px</strong>
+
+<br>
+
+Correct pause:
+<strong>1 second</strong>
+
+</div>
 
 
 <!-- BACKGROUND -->
@@ -276,7 +344,9 @@ Animal / Bird Images
 
 <div class="row g-2">
 
+
 <div class="col-6">
+
 <div class="animal-upload">
 
 <strong>A</strong>
@@ -289,10 +359,12 @@ Animal / Bird Images
 >
 
 </div>
+
 </div>
 
 
 <div class="col-6">
+
 <div class="animal-upload">
 
 <strong>B</strong>
@@ -305,10 +377,12 @@ Animal / Bird Images
 >
 
 </div>
+
 </div>
 
 
 <div class="col-6">
+
 <div class="animal-upload">
 
 <strong>C</strong>
@@ -321,10 +395,12 @@ Animal / Bird Images
 >
 
 </div>
+
 </div>
 
 
 <div class="col-6">
+
 <div class="animal-upload">
 
 <strong>D</strong>
@@ -337,13 +413,18 @@ Animal / Bird Images
 >
 
 </div>
-</div>
 
-</div>
 </div>
 
 
-<!-- AUDIO -->
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     AUDIO
+===================================================== -->
 
 <div class="border-top pt-4 mt-4">
 
@@ -369,7 +450,7 @@ Audio A — Moving
     class="audio-status"
     id="movingStatus"
 >
-No audio selected
+Default: /audio/A.mp3
 </div>
 
 </div>
@@ -378,7 +459,7 @@ No audio selected
 <div class="audio-box">
 
 <label class="form-label fw-bold">
-Audio B — Wrong Match
+Audio B — Wrong
 </label>
 
 <input
@@ -392,7 +473,7 @@ Audio B — Wrong Match
     class="audio-status"
     id="wrongStatus"
 >
-No audio selected
+Default: /audio/B.mp3
 </div>
 
 </div>
@@ -401,7 +482,7 @@ No audio selected
 <div class="audio-box">
 
 <label class="form-label fw-bold">
-Audio C — Correct Match
+Audio C — Correct
 </label>
 
 <input
@@ -415,7 +496,7 @@ Audio C — Correct Match
     class="audio-status"
     id="correctStatus"
 >
-No audio selected
+Default: /audio/C.mp3
 </div>
 
 </div>
@@ -426,6 +507,7 @@ No audio selected
 <!-- TIMING -->
 
 <div class="row g-2 mb-4 mt-3">
+
 
 <div class="col-6">
 
@@ -478,6 +560,7 @@ sec
 
 </div>
 
+
 </div>
 
 
@@ -488,6 +571,7 @@ sec
 <h5 class="mb-3">
 Credit
 </h5>
+
 
 <div class="form-check form-switch mb-3">
 
@@ -533,12 +617,14 @@ Credit Text / Link
 Generate Animation
 </button>
 
+
 <button
     class="btn btn-success"
     id="generateVideoBtn"
 >
 🎥 Generate WebM Video
 </button>
+
 
 <button
     class="btn btn-info text-white"
@@ -553,18 +639,64 @@ Generate Animation
 
 <div class="info">
 
+<strong>Sequence</strong>
 
+<br>
 
+D → A → B → C → D ✓
 
+<br>
 
+C → A → B → C ✓
 
+<br>
 
+B → A → B ✓
 
+<br>
 
+A → A ✓
+
+<br><br>
+
+<strong>Audio</strong>
+
+<br>
+
+🔊 Moving = Audio A
+
+<br>
+
+❌ Wrong = Audio B
+
+<br>
+
+✓ Correct = Audio C
+
+<br><br>
+
+<strong>Default Audio</strong>
+
+<br>
+
+If no file is uploaded, the tool automatically uses:
+
+<br>
+
+<code>/audio/A.mp3</code>
+
+<br>
+
+<code>/audio/B.mp3</code>
+
+<br>
+
+<code>/audio/C.mp3</code>
 
 </div>
 
 </div>
+
 </div>
 
 
@@ -575,6 +707,7 @@ Generate Animation
 <div class="col-12 col-lg-8 col-xl-9">
 
 <div class="preview-panel">
+
 
 <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
 
@@ -614,6 +747,7 @@ Upload images
 
 </div>
 
+
 <div class="time-row">
 
 <span id="currentTime">
@@ -638,12 +772,14 @@ Upload images
 ▶ Play
 </button>
 
+
 <button
     class="btn btn-light border"
     id="pauseBtn"
 >
 ⏸ Pause
 </button>
+
 
 <button
     class="btn btn-light border"
@@ -672,8 +808,11 @@ Generated WebM
 
 </div>
 
+
 </div>
+
 </div>
+
 
 </div>
 </div>
@@ -681,39 +820,43 @@ Generated WebM
 
 <script>
 
+
 /* =====================================================
-   CANVAS
+   CANVAS SETTINGS
 ===================================================== */
 
 const WIDTH = 1080;
+
 const HEIGHT = 1920;
 
 const TOP_SPACE = 50;
+
 const SAFE_BOTTOM = 150;
 
 const ANIMAL_SIZE = 375;
+
 const HALF_WIDTH = 200;
 
 const LEFT_AREA = 702;
 
 
-/* =====================================================
-   POSITIONING
-===================================================== */
-
 const ANIMAL_X =
     (LEFT_AREA - ANIMAL_SIZE) / 2;
 
+
 const RIGHT_X =
     ANIMAL_X + 200;
+
 
 const ANIMATION_HEIGHT =
     HEIGHT -
     TOP_SPACE -
     SAFE_BOTTOM;
 
+
 const ROW_HEIGHT =
     ANIMATION_HEIGHT / 4;
+
 
 const ANIMAL_Y =
     (ROW_HEIGHT - ANIMAL_SIZE) / 2;
@@ -771,13 +914,50 @@ let backgroundImage = null;
    AUDIO
 ===================================================== */
 
+/*
+    These are the default files.
+
+    Folder structure:
+
+    /audio/A.mp3
+    /audio/B.mp3
+    /audio/C.mp3
+*/
+
+const DEFAULT_AUDIO = {
+
+    moving: "audio/A.mp3",
+
+    wrong: "audio/B.mp3",
+
+    correct: "audio/C.mp3"
+
+};
+
+
 let audioMoving = null;
+
 let audioWrong = null;
+
 let audioCorrect = null;
 
+
 let movingAudioURL = null;
+
 let wrongAudioURL = null;
+
 let correctAudioURL = null;
+
+
+/* =====================================================
+   AUDIO LOAD STATUS
+===================================================== */
+
+let movingAudioLoaded = false;
+
+let wrongAudioLoaded = false;
+
+let correctAudioLoaded = false;
 
 
 /* =====================================================
@@ -790,10 +970,11 @@ let moveDuration = 3;
 
 let matchDuration = 1;
 
+
 /*
-    NEW:
-    Extra delay after correct match.
+    After correct match.
 */
+
 const CORRECT_PAUSE = 1;
 
 
@@ -830,7 +1011,9 @@ let audioContext = null;
 let audioDestination = null;
 
 let movingSource = null;
+
 let wrongSource = null;
+
 let correctSource = null;
 
 
@@ -839,7 +1022,9 @@ let correctSource = null;
 ===================================================== */
 
 const status =
-    document.getElementById("status");
+    document.getElementById(
+        "status"
+    );
 
 const progressBar =
     document.getElementById(
@@ -915,7 +1100,7 @@ function loadImage(src) {
 
 
 /* =====================================================
-   ANIMAL LOADING
+   LOAD ANIMALS
 ===================================================== */
 
 async function loadAnimal(
@@ -938,7 +1123,8 @@ async function loadAnimal(
         drawStaticCanvas();
 
         status.textContent =
-            letter + " uploaded";
+            letter +
+            " uploaded";
 
     }
     catch (error) {
@@ -1080,7 +1266,178 @@ document
 
 
 /* =====================================================
-   AUDIO
+   DEFAULT AUDIO
+===================================================== */
+
+/*
+    This function loads:
+
+    audio/A.mp3
+    audio/B.mp3
+    audio/C.mp3
+
+    automatically.
+
+    IMPORTANT:
+    The browser needs to be running this
+    through a local/server environment if
+    local file restrictions prevent loading.
+*/
+
+function loadDefaultAudio() {
+
+    audioMoving =
+        new Audio(
+            DEFAULT_AUDIO.moving
+        );
+
+    audioWrong =
+        new Audio(
+            DEFAULT_AUDIO.wrong
+        );
+
+    audioCorrect =
+        new Audio(
+            DEFAULT_AUDIO.correct
+        );
+
+
+    audioMoving.preload = "auto";
+
+    audioWrong.preload = "auto";
+
+    audioCorrect.preload = "auto";
+
+
+    audioMoving.addEventListener(
+        "canplaythrough",
+        function () {
+
+            movingAudioLoaded = true;
+
+            updateAudioStatus();
+
+        }
+    );
+
+
+    audioWrong.addEventListener(
+        "canplaythrough",
+        function () {
+
+            wrongAudioLoaded = true;
+
+            updateAudioStatus();
+
+        }
+    );
+
+
+    audioCorrect.addEventListener(
+        "canplaythrough",
+        function () {
+
+            correctAudioLoaded = true;
+
+            updateAudioStatus();
+
+        }
+    );
+
+
+    audioMoving.addEventListener(
+        "error",
+        function () {
+
+            movingAudioLoaded = false;
+
+            document
+            .getElementById(
+                "movingStatus"
+            )
+            .textContent =
+                "⚠ Default Audio A not found";
+
+        }
+    );
+
+
+    audioWrong.addEventListener(
+        "error",
+        function () {
+
+            wrongAudioLoaded = false;
+
+            document
+            .getElementById(
+                "wrongStatus"
+            )
+            .textContent =
+                "⚠ Default Audio B not found";
+
+        }
+    );
+
+
+    audioCorrect.addEventListener(
+        "error",
+        function () {
+
+            correctAudioLoaded = false;
+
+            document
+            .getElementById(
+                "correctStatus"
+            )
+            .textContent =
+                "⚠ Default Audio C not found";
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   AUDIO STATUS
+===================================================== */
+
+function updateAudioStatus() {
+
+    document
+    .getElementById(
+        "movingStatus"
+    )
+    .textContent =
+        movingAudioLoaded
+        ? "✓ Using Audio A"
+        : "Default: audio/A.mp3";
+
+
+    document
+    .getElementById(
+        "wrongStatus"
+    )
+    .textContent =
+        wrongAudioLoaded
+        ? "✓ Using Audio B"
+        : "Default: audio/B.mp3";
+
+
+    document
+    .getElementById(
+        "correctStatus"
+    )
+    .textContent =
+        correctAudioLoaded
+        ? "✓ Using Audio C"
+        : "Default: audio/C.mp3";
+
+}
+
+
+/* =====================================================
+   CUSTOM AUDIO
 ===================================================== */
 
 function loadAudioFile(
@@ -1089,8 +1446,16 @@ function loadAudioFile(
 ) {
 
     if (!file) {
+
+        /*
+            No upload means:
+            keep default audio.
+        */
+
         return;
+
     }
+
 
     const url =
         URL.createObjectURL(file);
@@ -1106,20 +1471,28 @@ function loadAudioFile(
 
         }
 
+
         movingAudioURL = url;
+
 
         audioMoving =
             new Audio(url);
 
+
         audioMoving.preload =
             "auto";
+
+
+        movingAudioLoaded = true;
+
 
         document
         .getElementById(
             "movingStatus"
         )
         .textContent =
-            "✓ " + file.name;
+            "✓ Custom Audio A: " +
+            file.name;
 
     }
 
@@ -1134,20 +1507,28 @@ function loadAudioFile(
 
         }
 
+
         wrongAudioURL = url;
+
 
         audioWrong =
             new Audio(url);
 
+
         audioWrong.preload =
             "auto";
+
+
+        wrongAudioLoaded = true;
+
 
         document
         .getElementById(
             "wrongStatus"
         )
         .textContent =
-            "✓ " + file.name;
+            "✓ Custom Audio B: " +
+            file.name;
 
     }
 
@@ -1162,25 +1543,37 @@ function loadAudioFile(
 
         }
 
+
         correctAudioURL = url;
+
 
         audioCorrect =
             new Audio(url);
 
+
         audioCorrect.preload =
             "auto";
+
+
+        correctAudioLoaded = true;
+
 
         document
         .getElementById(
             "correctStatus"
         )
         .textContent =
-            "✓ " + file.name;
+            "✓ Custom Audio C: " +
+            file.name;
 
     }
 
 }
 
+
+/* =====================================================
+   AUDIO INPUTS
+===================================================== */
 
 document
 .getElementById("audioMoving")
@@ -1228,7 +1621,7 @@ document
 
 
 /* =====================================================
-   AUDIO PLAY
+   PLAY AUDIO
 ===================================================== */
 
 function playAudio(audio) {
@@ -1237,18 +1630,22 @@ function playAudio(audio) {
         return;
     }
 
+
     try {
 
         audio.pause();
 
         audio.currentTime = 0;
 
+
         const promise =
             audio.play();
 
+
         if (
             promise &&
-            typeof promise.catch === "function"
+            typeof promise.catch ===
+            "function"
         ) {
 
             promise.catch(
@@ -1258,7 +1655,14 @@ function playAudio(audio) {
         }
 
     }
-    catch (error) {}
+    catch (error) {
+
+        console.error(
+            "Audio error:",
+            error
+        );
+
+    }
 
 }
 
@@ -1273,12 +1677,14 @@ function stopAllPreviewAudio() {
         audioMoving,
         audioWrong,
         audioCorrect
+
     ].forEach(
         audio => {
 
             if (!audio) {
                 return;
             }
+
 
             try {
 
@@ -1315,6 +1721,7 @@ function createSequence() {
 
         },
 
+
         {
             animal: "C",
 
@@ -1326,6 +1733,7 @@ function createSequence() {
 
         },
 
+
         {
             animal: "B",
 
@@ -1335,6 +1743,7 @@ function createSequence() {
             ]
 
         },
+
 
         {
             animal: "A",
@@ -1362,20 +1771,18 @@ function totalDuration() {
     sequence.forEach(
         item => {
 
-            /*
-                Every attempt:
-                movement + matching
-
-                After the FINAL correct attempt:
-                + 1 second pause
-            */
-
             total +=
                 item.targets.length *
                 (
                     moveDuration +
                     matchDuration
                 );
+
+
+            /*
+                1 second pause after
+                every correct match.
+            */
 
             total +=
                 CORRECT_PAUSE;
@@ -1397,6 +1804,7 @@ function drawBackground() {
 
     ctx.fillStyle =
         "#dbeafe";
+
 
     ctx.fillRect(
         0,
@@ -1441,8 +1849,10 @@ function drawBackground() {
 
     ctx.save();
 
+
     ctx.globalAlpha =
         backgroundOpacity;
+
 
     ctx.drawImage(
         backgroundImage,
@@ -1451,6 +1861,7 @@ function drawBackground() {
         width,
         height
     );
+
 
     ctx.restore();
 
@@ -1482,7 +1893,9 @@ function drawLeftHalf(
 
     ctx.save();
 
+
     ctx.beginPath();
+
 
     ctx.rect(
         x,
@@ -1490,6 +1903,7 @@ function drawLeftHalf(
         HALF_WIDTH,
         ANIMAL_SIZE
     );
+
 
     ctx.clip();
 
@@ -1509,7 +1923,7 @@ function drawLeftHalf(
 
 
 /* =====================================================
-   COMPLETE IMAGE
+   COMPLETE ANIMAL
 ===================================================== */
 
 function drawCompleteAnimal(
@@ -1559,7 +1973,9 @@ function drawRightHalf(
 
     ctx.save();
 
+
     ctx.beginPath();
+
 
     ctx.rect(
         x,
@@ -1567,6 +1983,7 @@ function drawRightHalf(
         HALF_WIDTH,
         ANIMAL_SIZE
     );
+
 
     ctx.clip();
 
@@ -1604,6 +2021,7 @@ function drawSign(
 
 
     ctx.beginPath();
+
 
     ctx.arc(
         x,
@@ -1685,14 +2103,18 @@ function drawCredit() {
 
     ctx.save();
 
+
     ctx.font =
         "24px Arial";
+
 
     ctx.textAlign =
         "center";
 
+
     ctx.textBaseline =
         "middle";
+
 
     ctx.fillStyle =
         "rgba(255,255,255,.55)";
@@ -1725,6 +2147,7 @@ function ease(t) {
 
     }
 
+
     return 1 -
         Math.pow(
             -2 * t + 2,
@@ -1735,7 +2158,7 @@ function ease(t) {
 
 
 /* =====================================================
-   GET ANIMATION STATE
+   ANIMATION STATE
 ===================================================== */
 
 function getAnimationState(
@@ -1801,11 +2224,7 @@ function getAnimationState(
 
 
         /*
-            NEW:
             Correct-match pause.
-
-            During this period the final
-            matched image + ✓ stays visible.
         */
 
         if (
@@ -1834,7 +2253,8 @@ function getAnimationState(
         }
 
 
-        time += CORRECT_PAUSE;
+        time +=
+            CORRECT_PAUSE;
 
     }
 
@@ -1870,10 +2290,6 @@ function renderFrame(
         );
 
 
-    /*
-        Finished
-    */
-
     if (!state) {
 
         [
@@ -1881,6 +2297,7 @@ function renderFrame(
             "B",
             "C",
             "D"
+
         ].forEach(
             letter => {
 
@@ -1888,6 +2305,7 @@ function renderFrame(
                     animals[letter],
                     letter
                 );
+
 
                 drawSign(
                     letter,
@@ -1905,11 +2323,6 @@ function renderFrame(
     }
 
 
-    /*
-        Determine already matched
-        positions.
-    */
-
     const matchedPositions = {
 
         A: false,
@@ -1919,6 +2332,11 @@ function renderFrame(
 
     };
 
+
+    /*
+        Previous animals remain
+        permanently visible.
+    */
 
     for (
         let i = 0;
@@ -1944,8 +2362,8 @@ function renderFrame(
 
 
     /*
-        During correct pause,
-        current animal is already matched.
+        During the 1-second pause,
+        current match is also permanent.
     */
 
     if (
@@ -1959,15 +2377,12 @@ function renderFrame(
     }
 
 
-    /*
-        Draw left side.
-    */
-
     [
         "A",
         "B",
         "C",
         "D"
+
     ].forEach(
         letter => {
 
@@ -1995,7 +2410,7 @@ function renderFrame(
 
 
     /*
-        Permanent correct signs.
+        Permanent green checkmarks.
     */
 
     [
@@ -2003,6 +2418,7 @@ function renderFrame(
         "B",
         "C",
         "D"
+
     ].forEach(
         letter => {
 
@@ -2022,11 +2438,10 @@ function renderFrame(
 
 
     /*
-        Correct pause:
-        Do NOT show moving image.
+        Correct pause.
 
-        Just keep the correct image
-        and ✓ visible for 1 second.
+        Nothing moves during this
+        1 second.
     */
 
     if (
@@ -2040,10 +2455,6 @@ function renderFrame(
     }
 
 
-    /*
-        Audio.
-    */
-
     if (playSound) {
 
         handlePreviewAudio(
@@ -2052,10 +2463,6 @@ function renderFrame(
 
     }
 
-
-    /*
-        Current movement.
-    */
 
     const localTime =
         state.localTime;
@@ -2088,12 +2495,13 @@ function renderFrame(
 
 
     let startX;
+
     let startY;
 
 
     /*
-        First attempt starts from
-        top-right.
+        Every new animal begins
+        from top-right.
     */
 
     if (
@@ -2103,6 +2511,7 @@ function renderFrame(
         startX =
             WIDTH;
 
+
         startY =
             TOP_SPACE;
 
@@ -2110,8 +2519,8 @@ function renderFrame(
     else {
 
         /*
-            Continue directly downward
-            from the previous position.
+            Continue downward from
+            previous failed position.
         */
 
         const previousTarget =
@@ -2172,7 +2581,8 @@ function renderFrame(
 
 
     /*
-        Wrong / correct sign.
+        Show × for failed attempts
+        and ✓ for the final match.
     */
 
     if (
@@ -2199,7 +2609,7 @@ function renderFrame(
 
 
 /* =====================================================
-   AUDIO HANDLER
+   PREVIEW AUDIO
 ===================================================== */
 
 function handlePreviewAudio(
@@ -2211,13 +2621,17 @@ function handlePreviewAudio(
     }
 
 
+    if (
+        state.type === "pause"
+    ) {
+
+        return;
+
+    }
+
+
     const moving =
         state.localTime <
-        moveDuration;
-
-
-    const matching =
-        state.localTime >=
         moveDuration;
 
 
@@ -2303,6 +2717,7 @@ function drawStaticCanvas() {
         "B",
         "C",
         "D"
+
     ].forEach(
         letter => {
 
@@ -2321,7 +2736,7 @@ function drawStaticCanvas() {
 
 
 /* =====================================================
-   VALIDATE
+   VALIDATION
 ===================================================== */
 
 function validateImages() {
@@ -2470,6 +2885,7 @@ function playPreview() {
 
             isPlaying = false;
 
+
             previewPaused = 0;
 
 
@@ -2487,6 +2903,7 @@ function playPreview() {
 
 
             stopAllPreviewAudio();
+
 
             return;
 
@@ -2583,6 +3000,7 @@ function restartPreview() {
 
     previewPaused = 0;
 
+
     lastAudioEventKey = "";
 
 
@@ -2649,7 +3067,7 @@ function getWebMMime() {
 
 
 /* =====================================================
-   AUDIO RECORDING STREAM
+   AUDIO RECORDING
 ===================================================== */
 
 function setupAudioRecording() {
@@ -2746,7 +3164,7 @@ function setupAudioRecording() {
 
 
 /* =====================================================
-   RESET RECORDING AUDIO
+   RESET AUDIO
 ===================================================== */
 
 function resetRecordingAudio() {
@@ -2755,6 +3173,7 @@ function resetRecordingAudio() {
         audioMoving,
         audioWrong,
         audioCorrect
+
     ].forEach(
         audio => {
 
@@ -2801,7 +3220,7 @@ async function generateWebM() {
     ) {
 
         alert(
-            "MediaRecorder is not supported in this browser."
+            "MediaRecorder is not supported."
         );
 
         return;
@@ -2853,7 +3272,7 @@ async function generateWebM() {
     if (!mime) {
 
         alert(
-            "WebM is not supported by this browser."
+            "WebM is not supported."
         );
 
         return;
@@ -2903,22 +3322,14 @@ async function generateWebM() {
 
     try {
 
-        if (
-            audioMoving ||
-            audioWrong ||
-            audioCorrect
-        ) {
-
-            audioStream =
-                setupAudioRecording();
-
-        }
+        audioStream =
+            setupAudioRecording();
 
     }
     catch (error) {
 
         console.error(
-            "Audio setup error:",
+            "Audio setup failed:",
             error
         );
 
@@ -3026,11 +3437,11 @@ async function generateWebM() {
                 event
             );
 
-            generateButton.disabled =
-                false;
-
             status.textContent =
                 "Recording error";
+
+            generateButton.disabled =
+                false;
 
         };
 
@@ -3101,7 +3512,9 @@ async function generateWebM() {
                 track => {
 
                     try {
+
                         track.stop();
+
                     }
                     catch (e) {}
 
@@ -3137,6 +3550,7 @@ async function generateWebM() {
 
     const FPS = 30;
 
+
     const frameInterval =
         1000 / FPS;
 
@@ -3147,10 +3561,6 @@ async function generateWebM() {
 
     let recordingAudioEvent = "";
 
-
-    /*
-        Recording audio events.
-    */
 
     function processRecordingAudio(
         elapsed
@@ -3163,8 +3573,8 @@ async function generateWebM() {
 
 
         /*
-            No audio during the
-            final 1-second correct pause.
+            No audio during
+            correct 1-second pause.
         */
 
         if (
@@ -3387,7 +3797,7 @@ function downloadWebM() {
 
 
     link.download =
-        "animal-match-short-" +
+        "animal-match-" +
         Date.now() +
         ".webm";
 
@@ -3518,6 +3928,16 @@ document
     totalDuration()
     .toFixed(1) +
     "s";
+
+
+/*
+    Load default audio.
+
+    This happens automatically when
+    the page loads.
+*/
+
+loadDefaultAudio();
 
 </script>
 
